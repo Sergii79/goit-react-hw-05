@@ -35,13 +35,13 @@ export const fetchMovieDetails = async (movieId) => {
 };
 
 // Получение актерского состава фильма
-export const fetchMovieCredits = async (movieId) => {
-  const response = await axiosInstance.get(`/movie/${movieId}/credits`);
-  return response.data.cast;
-};
+// export const fetchMovieCredits = async (movieId) => {
+//   const response = await axiosInstance.get(`/movie/${movieId}/credits`);
+//   return response.data.cast;
+// };
 
 // Получение отзывов о фильме
-export const fetchMovieReviews = async (movieId) => {
-  const response = await axiosInstance.get(`/movie/${movieId}/reviews`);
-  return response.data.results;
-};
+// export const fetchMovieReviews = async (movieId) => {
+//   const response = await axiosInstance.get(`/movie/${movieId}/reviews`);
+//   return response.data.results;
+// };
