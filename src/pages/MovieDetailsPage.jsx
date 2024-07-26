@@ -7,9 +7,9 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
-import { fetchMovieDetails } from "../services/api"; // Проверьте путь
-import MovieCast from "../components/MovieCast/MovieCast"; // Проверьте путь
-import MovieReviews from "../components/MovieReviews/MovieReviews"; // Проверьте путь
+import { fetchMovieDetails } from "../services/api";
+import MovieCast from "../components/MovieCard/MovieCard"; // Убедитесь, что путь правильный
+import MovieReviews from "../components/MovieReviews/MovieReviews"; // Убедитесь, что путь правильный
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -71,3 +71,44 @@ const MovieDetailsPage = () => {
 };
 
 export default MovieDetailsPage;
+
+// import { useParams } from "react-router-dom";
+// import { fetchMovieDetails } from "../services/api";
+// import MovieCast from "../components/MovieCast/MovieCast";
+// import MovieReviews from "../components/MovieReviews/MovieReviews";
+
+// const MovieDetailsPage = () => {
+//   const { movieId } = useParams();
+//   const [movie, setMovie] = useState(null);
+
+//   useEffect(() => {
+//     if (!movieId) return;
+
+//     const getMovieDetails = async () => {
+//       try {
+//         const data = await fetchMovieDetails(movieId);
+//         setMovie(data);
+//       } catch (error) {
+//         console.error("Error fetching movie details:", error);
+//       }
+//     };
+
+//     getMovieDetails();
+//   }, [movieId]);
+
+//   if (!movie) {
+//     return <p>Loading...</p>;
+//   }
+
+//   return (
+//     <div>
+//       <h1>{movie.title}</h1>
+//       <p>{movie.overview}</p>
+//       {/* Добавьте компоненты для кастинга и обзоров */}
+//       <MovieCast movieId={movieId} />
+//       <MovieReviews movieId={movieId} />
+//     </div>
+//   );
+// };
+
+// export default MovieDetailsPage;
